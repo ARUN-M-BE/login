@@ -1,29 +1,35 @@
-import SocialLogin from "./components/SocialLogin";
-import './App.css'
-import InputField from "./components/InputField";
+import { Container, Row, Col } from "react-bootstrap";
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
+import Home from "./components/Home";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import ProtectedRoute from "./components/ProtectedRoute";
+import { UserAuthContextProvider } from "./context/UserAuthContext";
 
-const App = () => {
+function App() {
   return (
-    <div className="login-container">
-      <h2 className="form-title">Log in with</h2>
-      
-      <form action="#" className="login-form">
-        <InputField type="email" placeholder="Email address" icon="mail" />
-        <InputField type="password" placeholder="Password" icon="lock" />
-
-        <a href="#" className="forgot-password-link">Forgot password?</a>
-        <button type="submit" className="login-button">Log In</button>
-      </form>
-
-      <p className="signup-prompt">
-        Don&apos;t have an account? <a href="#" className="signup-link">Sign up</a>
-      </p>
-
-      <p className="separator"><span>or</span></p>
-      <SocialLogin />
-
-    </div>
-  )
+    <Container style={{ width: "400px" }}>
+      <Row>
+        <Col>
+          <UserAuthContextProvider>
+            <Routes>
+              <Route
+                path="/home"
+                element={
+                  <ProtectedRoute>
+                    <Home />
+                  </ProtectedRoute>
+                }
+              />
+              <Route path="/" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+            </Routes>
+          </UserAuthContextProvider>
+        </Col>
+      </Row>
+    </Container>
+  );
 }
 
 export default App;
