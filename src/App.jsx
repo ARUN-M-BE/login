@@ -1,5 +1,5 @@
 import SocialLogin from "./components/SocialLogin";
-import './App.css'
+import './App.css';
 import InputField from "./components/InputField";
 
 const App = () => {
