@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: <YOURAPIKEY>,
-  authDomain: <YOURAUTHDOAMIN>,
-  projectId: <YOURPROJECTID>,
-  storageBucket: <YOURSTORAGEBUCKET>,
-  messagingSenderId: <YOURMESSAGINGSENDERID>,
-  appId: <YOURAPPID>,
+  apiKey: "AIzaSyC1xW5yJcw3ZRVD0-bAI2Hxz-0mN0TgJLc",
+  authDomain: "login-arun.firebaseapp.com",
+  projectId: "login-arun",
+  storageBucket: "login-arun.firebasestorage.app",
+  messagingSenderId: "851950029612",
+  appId: "1:851950029612:web:82670d67a1e28dc6d17a89"
 };
 
 // Initialize Firebase
