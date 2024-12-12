@@ -29,6 +29,14 @@ body {
   background: #fff;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
+.signup-container{
+  margin: 0 auto;
+  max-width: 410px;
+  padding: 2rem 1.5rem;
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
 
 .login-container .form-title {
   text-align: center;
@@ -36,8 +44,18 @@ body {
   font-weight: 600;
   margin-bottom: 1.87rem;
 }
+.signup-container .form-title {
+  text-align: center;
+  font-size: 1.37rem;
+  font-weight: 600;
+  margin-bottom: 1.87rem;
+}
 
 .login-container .social-login {
+  display: flex;
+  gap: 1.31rem;
+} 
+.signup-container .social-login {
   display: flex;
   gap: 1.31rem;
 }
@@ -172,16 +190,78 @@ body {
   background: #5F41E4;
   transition: 0.3s ease;
 }
-
+.signup-form{
+   .input-wrapper {
+    height: 54px;
+    width: 100%;
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+   .input-field {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    font-size: 1.06rem;
+    border-radius: 0.31rem;
+    border: 1px solid #bfb3f2;
+    padding: 0px 1.25rem 0 3.12rem;
+    transition: 0.2s ease;
+  }
+   .input-field:focus {
+    border-color: #5F41E4;
+  }
+  .input-field::placeholder {
+    color: #9284c8;
+  }
+   .input-wrapper i {
+    position: absolute;
+    top: 50%;
+    height: 100%;
+    display: flex;
+    color: #a395e0;
+    align-items: center;
+    transform: translateY(-50%);
+    transition: 0.2s ease;
+  }
+   .input-wrapper i:not(.eye-icon) {
+    left: 0.93rem;
+    pointer-events: none;
+  }
+   .input-field:focus ~ i:not(.eye-icon) {
+    color: #5F41E4;
+  }
+   .input-wrapper i.eye-icon {
+    display: none;
+    right: 0.93rem;
+    color: #917DE8;
+    cursor: pointer;
+    font-size: 1.25rem;
+  }
+  .input-wrapper .input-field:valid ~ .eye-icon {
+    display: flex;
+  }
+   .forgot-password-link {
+    display: block;
+    width:fit-content;
+    margin-top: -0.44rem;
+  }
+   .login-button {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 54px;
+    color: #fff;
+    font-size: 1.125rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 2.19rem;
+    border-radius: 0.31rem;
+    background: #5F41E4;
+    transition: 0.3s ease;
+  }
+}
 .login-form .login-button:hover {
   background: #4320df;
-}
-
-.login-container .signup-prompt {
-  text-align: center;
-  font-size: 1.06rem;
-  font-weight: 500;
-  margin: 1.75rem 0 0.31rem;
 }
 
 .login-container a {
@@ -189,7 +269,103 @@ body {
   font-weight: 500;
   text-decoration: none;
 }
-
+.signup-container a {
+  color: #5F41E4;
+  font-weight: 500;
+  text-decoration: none;
+}
 .login-container a:hover {
   text-decoration: underline;
+}
+.signup-container a:hover {
+  text-decoration: underline;
+}
+
+/* update */
+.auth-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 10px;
+  font-size: 18px;
+  color: #666;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 10px 10px 35px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.auth-button {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.auth-button:hover {
+  background: #0056b3;
+}
+
+.auth-toggle {
+  margin-top: 10px;
+}
+
+.toggle-link {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.toggle-link:hover {
+  text-decoration: underline;
+}
+
+.separator {
+  margin: 20px 0;
+  position: relative;
+  text-align: center;
+}
+
+.separator span {
+  background: #f9f9f9;
+  padding: 0 10px;
+}
+
+.separator::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #ddd;
+  z-index: -1;
 }
