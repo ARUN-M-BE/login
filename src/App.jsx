@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import SocialLogin from "./components/SocialLogin";
 import './App.css';
 import InputField from "./components/InputField";
+import firebase from "./firebase/firebase";
 
 const AuthPage = () => {
   const [isLogin, setIsLogin] = useState(true);
