@@ -4,7 +4,7 @@ import { auth, db } from "./firebase";
 import { setDoc, doc } from "firebase/firestore";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom"; 
-import tailwindConfig from "../firebase/tailwind.config";
+// import tailwindConfig from "../firebase/tailwind.config";
 
 function Register() {
   const [email, setEmail] = useState("");

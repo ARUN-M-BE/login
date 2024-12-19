@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { auth, db } from "./firebase";
 import { doc, getDoc } from "firebase/firestore";
-import tailwindConfig from "../firebase/tailwind.config";
+// import tailwindConfig from "../firebase/tailwind.config";
 
 function Profile() {
   const [userDetails, setUserDetails] = useState(null);
