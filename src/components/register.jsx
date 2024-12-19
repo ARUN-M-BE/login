@@ -1,19 +1,23 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithRedirect } from "firebase/auth";
 import React, { useState } from "react";
 import { auth, db } from "./firebase";
 import { setDoc, doc } from "firebase/firestore";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom"; 
+import 
 
 function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
+  const [number, setNum] = useState("");
 
+  const navigate = useNavigate(); // Initialize navigate
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      await createUserWithEmailAndPassword(auth, email, password, number);
       const user = auth.currentUser;
       console.log(user);
       if (user) {
@@ -21,13 +25,14 @@ function Register() {
           email: user.email,
           firstName: fname,
           lastName: lname,
-          photo:""
+          phoneNumber: number
         });
       }
       console.log("User Registered Successfully!!");
       toast.success("User Registered Successfully!!", {
         position: "top-center",
       });
+      navigate("/login");
     } catch (error) {
       console.log(error.message);
       toast.error(error.message, {
@@ -58,6 +63,17 @@ function Register() {
           className="form-control"
           placeholder="Last name"
           onChange={(e) => setLname(e.target.value)}
+        />
+      </div>
+
+      <div className="mb-3">
+        <label>Phone Number</label>
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Enter Number"
+          onChange={(e) => setNum(e.target.value)}
+          required
         />
       </div>
 
