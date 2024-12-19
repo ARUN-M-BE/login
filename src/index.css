@@ -89,3 +89,7 @@ html,
     margin-top: 1rem;
     text-align: center;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
