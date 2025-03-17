@@ -5,12 +5,12 @@ import {getFirestore} from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCv7NsFeXN1bowBUCe_DchBqoJIAK9iMOg",
-  authDomain: "react-login-b19d9.firebaseapp.com",
-  projectId: "react-login-b19d9",
-  storageBucket: "react-login-b19d9.firebasestorage.app",
-  messagingSenderId: "883957391629",
-  appId: "1:883957391629:web:22376c934277fd09361044"
+  apiKey: "AIzaSyAf1EgqV9FCzJFK1eqQmjtN9lcia3I_Tkk",
+  authDomain: "login-g-app.firebaseapp.com",
+  projectId: "login-g-app",
+  storageBucket: "login-g-app.firebasestorage.app",
+  messagingSenderId: "434240938799",
+  appId: "1:434240938799:web:593fb0d6b4df5eb534f7da"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -18,3 +18,12 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth();
 export const db = getFirestore(app);
 export default app;
+
+// rules_version = '2';
+// service cloud.firestore {
+//   match /databases/{database}/documents {
+//     match /music/{document=**} {
+//       allow read, write: if request.auth != null;
+//     }
+//   }
+// }
